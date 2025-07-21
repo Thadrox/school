@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Duke CBT Quiz</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f2f5;
+      padding: 20px;
+    }
+    h2 {
+      color: #333;
+    }
+    .question {
+      background: #fff;
+      padding: 15px;
+      margin-bottom: 15px;
+      border-radius: 10px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+    .result {
+      font-size: 18px;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin-top: 15px;
+      cursor: pointer;
+    }
+    input[type="text"] {
+      padding: 10px;
+      width: 100%;
+      max-width: 300px;
+      margin-bottom: 15px;
+      font-size: 16px;
+    }
+    #savedResults {
+      margin-top: 30px;
+      background: #fff;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+
+<h2>Duke CBT Quiz</h2>
+
+<label>
+  Student Name:<br>
+  <input type="text" id="studentName" placeholder="Enter your full name" required>
+</label>
+
+<form id="quizForm">
+
+  <!-- QUESTION 1 -->
+    <div class="question">
+
+    <p>1. What is a computer?</p>
+
+    <label><input type="radio" name="q1" value="A"> A. A device that processes information</label><br>
+
+    <label><input type="radio" name="q1" value="B"> B. A type of television</label><br>
+
+    <label><input type="radio" name="q1" value="C"> C. A book for reading stories</label><br>
+
+    <label><input type="radio" name="q1" value="D"> D. A musical instrument</label>
+
+  </div>
+
+
+
+  <div class="question">
+
+    <p>2. Which of the following is an example of computer hardware?</p>
+
+    <label><input type="radio" name="q2" value="A"> A. Microsoft Word</label><br>
+
+    <label><input type="radio" name="q2" value="B"> B. Operating System</label><br>
+
+    <label><input type="radio" name="q2" value="C"> C. Keyboard</label><br>
+
+    <label><input type="radio" name="q2" value="D"> D. Video game</label>
+
+  </div>
+
+
+
+  <div class="question">
+
+    <p>3. What is software?</p>
+
+    <label><input type="radio" name="q3" value="A"> A. The physical parts of a computer</label><br>
+
+    <label><input type="radio" name="q3" value="B"> B. Programs and instructions that tell the computer what to do</label><br>
+
+    <label><input type="radio" name="q3" value="C"> C. The screen of the computer</label><br>
+
+    <label><input type="radio" name="q3" value="D"> D. The wires connecting computer parts</label>
+
+  </div>
+
+
+
+  <div class="question">
+
+    <p>4. Which component is known as the 'brain' of the computer?</p>
+
+    <label><input type="radio" name="q4" value="A"> A. Monitor</label><br>
+
+    <label><input type="radio" name="q4" value="B"> B. Central Processing Unit (CPU)</label><br>
+
+    <label><input type="radio" name="q4" value="C"> C. Printer</label><br>
+
+    <label><input type="radio" name="q4" value="D"> D. Speakers</label>
+
+  </div>
+
+
+
+  <div class="question">
+
+    <p>5. Which of these is an input device?</p>
+
+    <label><input type="radio" name="q5" value="A"> A. Printer</label><br>
+
+    <label><input type="radio" name="q5" value="B"> B. Speakers</label><br>
+
+    <label><input type="radio" name="q5" value="C"> C. Mouse</label><br>
+
+    <label><input type="radio" name="q5" value="D"> D. Projector</label>
+
+  </div>
+
+
+
+  <div class="question">
+
+    <p>6. What is the main function of an operating system?</p>
+
+    <label><input type="radio" name="q6" value="A"> A. To play music</label><br>
+
+    <label><input type="radio" name="q6" value="B"> B. To manage computer hardware and software resources</label><br>
+
+    <label><input type="radio" name="q6" value="C"> C. To draw pictures</label><br>
+
+    <label><input type="radio" name="q6" value="D"> D. To browse the internet</label>
+
+  </div>
+
+
+
+  <div class="question">
+
+    <p>7. How often should a computer's software be updated?</p>
+
+    <label><input type="radio" name="q7" value="A"> A. Only when a new computer is bought</label><br>
+
+    <label><input type="radio" name="q7" value="B"> B. Never, it slows down the computer</label><br>
+
+    <label><input type="radio" name="q7" value="C"> C. Regularly, to improve security and performance</label><br>
+
+    <label><input type="radio" name="q7" value="D"> D. Once a year</label>
+
+  </div>
+
+
+
+  <div class="question">
+
+    <p>8. What does 'booting up' a computer mean?</p>
+
+    <label><input type="radio" name="q8" value="A"> A. Turning off the computer</label><br>
+
+    <label><input type="radio" name="q8" value="B"> B. Starting the computer and loading the operating system</label><br>
+
+    <label><input type="radio" name="q8" value="C"> C. Installing new software</label><br>
+
+    <label><input type="radio" name="q8" value="D"> D. Connecting to the internet</label>
+
+  </div>
+
+
+
+  <div class="question">
+
+    <p>9. Which keyboard shortcut is commonly used to copy selected text?</p>
+
+    <label><input type="radio" name="q9" value="A"> A. Ctrl + X</label><br>
+
+    <label><input type="radio" name="q9" value="B"> B. Ctrl + C</label><br>
+
+    <label><input type="radio" name="q9" value="C"> C. Ctrl + V</label><br>
+
+    <label><input type="radio" name="q9" value="D"> D. Ctrl + S</label>
+
+  </div>
+
+
+
+  <div class="question">
+
+    <p>10. What is the purpose of 'dragging and dropping' with a mouse?</p>
+
+    <label><input type="radio" name="q10" value="A"> A. To open a program</label><br>
+
+    <label><input type="radio" name="q10" value="B"> B. To move or copy files and folders</label><br>
+
+    <label><input type="radio" name="q10" value="C"> C. To type text</label><br>
+
+    <label><input type="radio" name="q10" value="D"> D. To restart the computer</label>
+
+  </div>
+
+
+
+  <div class="question">
+
+    <p>11. What is an antivirus software used for?</p>
+
+    <label><input type="radio" name="q11" value="A"> A. To create documents</label><br>
+
+    <label><input type="radio" name="q11" value="B"> B. To protect the computer from harmful programs</label><br>
+
+    <label><input type="radio" name="q11" value="C"> C. To browse the internet faster</label><br>
+
+    <label><input type="radio" name="q11" value="D"> D. To play video games</label>
+
+  </div>
+
+
+
+  <div class="question">
+
+    <p>12. Which storage device uses optical technology to read and write data?</p>
+
+    <label><input type="radio" name="q12" value="A"> A. Hard Disk Drive (HDD)</label><br>
+
+    <label><input type="radio" name="q12" value="B"> B. USB Flash Drive</label><br>
+
+    <label><input type="radio" name="q12" value="C"> C. Compact Disc (CD)</label><br>
+
+    <label><input type="radio" name="q12" value="D"> D. Random Access Memory (RAM)</label>
+
+  </div>
+
+
+
+  <div class="question">
+
+    <p>13. What is the primary difference between RAM and ROM?</p>
+
+    <label><input type="radio" name="q13" value="A"> A. RAM is for permanent storage, ROM is for temporary storage</label><br>
+
+    <label><input type="radio" name="q13" value="B"> B. RAM loses data when power is off (volatile), ROM retains data (non-volatile)</label><br>
+
+    <label><input type="radio" name="q13" value="C"> C. RAM is for input, ROM is for output</label><br>
+
+    <label><input type="radio" name="q13" value="D"> D. RAM is slower than ROM</label>
+
+  </div>
+
+
+
+  <div class="question">
+
+    <p>14. Which peripheral device is used to produce a hard copy of documents or images?</p>
+
+    <label><input type="radio" name="q14" value="A"> A. Scanner</label><br>
+
+    <label><input type="radio" name="q14" value="B"> B. Speaker</label><br>
+
+    <label><input type="radio" name="q14" value="C"> C. Printer</label><br>
+
+    <label><input type="radio" name="q14" value="D"> D. Webcam</label>
+
+  </div>
+
+
+
+  <div class="question">
+
+    <p>15. What is the correct way to shut down a computer?</p>
+
+    <label><input type="radio" name="q15" value="A"> A. Pulling out the power cord</label><br>
+
+    <label><input type="radio" name="q15" value="B"> B. Pressing the power button once quickly</label><br>
+
+    <label><input type="radio" name="q15" value="C"> C. Using the 'Shut Down' option in the operating system menu</label><br>
+
+    <label><input type="radio" name="q15" value="D"> D. Closing all open programs and then turning off the monitor</label>
+
+  </div>
+
+
+
+  <div class="question">
+
+    <p>16. Why is it important to keep the computer clean (e.g., dusting)?</p>
+
+    <label><input type="radio" name="q16" value="A"> A. It makes the computer run faster on the internet</label><br>
+
+    <label><input type="radio" name="q16" value="B"> B. To prevent overheating and extend its lifespan</label><br>
+
+    <label><input type="radio" name="q16" value="C"> C. To change the computer's wallpaper</label><br>
+
+    <label><input type="radio" name="q16" value="D"> D. To install new software</label>
+
+  </div>
+
+
+
+  <div class="question">
+
+    <p>17. What does 'Ctrl + Z' typically do in most applications?</p>
+
+    <label><input type="radio" name="q17" value="A"> A. Redo the last action</label><br>
+
+    <label><input type="radio" name="q17" value="B"> B. Undo the last action</label><br>
+
+    <label><input type="radio" name="q17" value="C"> C. Save the document</label><br>
+
+    <label><input type="radio" name="q17" value="D"> D. Print the document</label>
+
+  </div>
+
+
+
+  <div class="question">
+
+    <p>18. Which mouse action is used to open a file or program?</p>
+
+    <label><input type="radio" name="q18" value="A"> A. Single-click</label><br>
+
+    <label><input type="radio" name="q18" value="B"> B. Right-click</label><br>
+
+    <label><input type="radio" name="q18" value="C"> C. Double-click</label><br>
+
+    <label><input type="radio" name="q18" value="D"> D. Scroll</label>
+
+  </div>
+
+
+
+  <div class="question">
+
+    <p>19. What is the purpose of a firewall?</p>
+
+    <label><input type="radio" name="q19" value="A"> A. To speed up the computer's processing</label><br>
+
+    <label><input type="radio" name="q19" value="B"> B. To prevent unauthorized access to a computer network</label><br>
+
+    <label><input type="radio" name="q19" value="C"> C. To display images on the screen</label><br>
+
+    <label><input type="radio" name="q19" value="D"> D. To store large amounts of data</label>
+
+  </div>
+
+
+
+  <div class="question">
+
+    <p>20. Which shortcut is used to paste copied or cut text?</p>
+
+    <label><input type="radio" name="q20" value="A"> A. Ctrl + P</label><br>
+
+    <label><input type="radio" name="q20" value="B"> B. Ctrl + X</label><br>
+
+    <label><input type="radio" name="q20" value="C"> C. Ctrl + V</label><br>
+
+    <label><input type="radio" name="q20" value="D"> D. Ctrl + A</label>
+
+  </div>
+
+
+
+  <div class="question">
+
+    <p>21. What is the function of the Delete key on a keyboard?</p>
+
+    <label><input type="radio" name="q21" value="A"> A. To move the cursor to the next line</label><br>
+
+    <label><input type="radio" name="q21" value="B"> B. To erase characters to the left of the cursor</label><br>
+
+    <label><input type="radio" name="q21" value="C"> C. To erase characters to the right of the cursor or selected items</label><br>
+
+    <label><input type="radio" name="q21" value="D"> D. To make text bold</label>
+
+  </div>
+
+
+
+  <div class="question">
+
+    <p>22. What is the purpose of defragmenting a hard drive?</p>
+
+    <label><input type="radio" name="q22" value="A"> A. To add more memory to the computer</label><br>
+
+    <label><input type="radio" name="q22" value="B"> B. To organize scattered data for faster access</label><br>
+
+    <label><input type="radio" name="q22" value="C"> C. To install new programs</label><br>
+
+    <label><input type="radio" name="q22" value="D"> D. To clean the computer screen</label>
+
+  </div>
+
+
+
+  <div class="question">
+
+    <p>23. Which term refers to the physical components of a computer system?</p>
+
+    <label><input type="radio" name="q23" value="A"> A. Software</label><br>
+
+    <label><input type="radio" name="q23" value="B"> B. Data</label><br>
+
+    <label><input type="radio" name="q23" value="C"> C. Hardware</label><br>
+
+    <label><input type="radio" name="q23" value="D"> D. Network</label>
+
+  </div>
+
+
+
+  <div class="question">
+
+    <p>24. What is the main use of a web browser?</p>
+
+    <label><input type="radio" name="q24" value="A"> A. To create spreadsheets</label><br>
+
+    <label><input type="radio" name="q24" value="B"> B. To view and navigate websites on the internet</label><br>
+
+    <label><input type="radio" name="q24" value="C"> C. To edit photos</label><br>
+
+    <label><input type="radio" name="q24" value="D"> D. To play offline games</label>
+
+  </div>
+
+
+
+  <div class="question">
+
+    <p>25. Which action is best for selecting multiple non-adjacent files using a mouse and keyboard?</p>
+
+    <label><input type="radio" name="q25" value="A"> A. Clicking each file normally</label><br>
+
+    <label><input type="radio" name="q25" value="B"> B. Holding the Shift key while clicking</label><br>
+
+    <label><input type="radio" name="q25" value="C"> C. Holding the Ctrl key while clicking each file</label><br>
+
+    <label><input type="radio" name="q25" value="D"> D. Dragging a box around the files</label>
+
+  </div>
+
+
+
+  <div class="question">
+
+    <p>26. What is the purpose of recycling old computer parts?</p>
+
+    <label><input type="radio" name="q26" value="A"> A. To increase computer speed</label><br>
+
+    <label><input type="radio" name="q26" value="B"> B. To reduce electronic waste and recover valuable materials</label><br>
+
+    <label><input type="radio" name="q26" value="C"> C. To get free new computers</label><br>
+
+    <label><input type="radio" name="q26" value="D"> D. To install more software</label>
+
+  </div>
+
+
+
+  <div class="question">
+
+    <p>27. Which of these is a common type of input device?</p>
+
+    <label><input type="radio" name="q27" value="A"> A. Monitor</label><br>
+
+    <label><input type="radio" name="q27" value="B"> B. Keyboard</label><br>
+
+    <label><input type="radio" name="q27" value="C"> C. Projector</label><br>
+
+    <label><input type="radio" name="q27" value="D"> D. Speakers</label>
+
+  </div>
+
+
+
+  <div class="question">
+
+    <p>28. What does 'downloading' mean?</p>
+
+    <label><input type="radio" name="q28" value="A"> A. Sending files from your computer to another computer</label><br>
+
+    <label><input type="radio" name="q28" value="B"> B. Receiving files from another computer to your computer</label><br>
+
+    <label><input type="radio" name="q28" value="C"> C. Deleting files from your computer</label><br>
+
+    <label><input type="radio" name="q28" value="D"> D. Creating new files on your computer</label>
+
+  </div>
+
+
+
+  <div class="question">
+
+    <p>29. What is the purpose of a username and password?</p>
+
+    <label><input type="radio" name="q29" value="A"> A. To make the computer run faster</label><br>
+
+    <label><input type="radio" name="q29" value="B"> B. To personalize the computer's appearance</label><br>
+
+    <label><input type="radio" name="q29" value="C"> C. To secure access to a computer or account</label><br>
+
+    <label><input type="radio" name="q29" value="D"> D. To install new hardware</label>
+
+  </div>
+
+
+
+  <div class="question">
+
+    <p>30. Which keyboard shortcut is used to select all content in a document?</p>
+
+    <label><input type="radio" name="q30" value="A"> A. Ctrl + X</label><br>
+
+    <label><input type="radio" name="q30" value="B"> B. Ctrl + S</label><br>
+
+    <label><input type="radio" name="q30" value="C"> C. Ctrl + A</label><br>
+
+    <label><input type="radio" name="q30" value="D"> D. Ctrl + Z</label>
+
+  </div>
+
+
+
+  <div class="question">
+
+    <p>31. What is an icon on a computer screen?</p>
+
+    <label><input type="radio" name="q31" value="A"> A. A type of keyboard</label><br>
+
+    <label><input type="radio" name="q31" value="B"> B. A small graphical representation of a program or file</label><br>
+
+    <label><input type="radio" name="q31" value="C"> C. The computer's power button</label><br>
+
+    <label><input type="radio" name="q31" value="D"> D. A part of the computer's internal memory</label>
+
+  </div>
+
+
+
+  <div class="question">
+
+    <p>32. What is the function of the 'Caps Lock' key?</p>
+
+    <label><input type="radio" name="q32" value="A"> A. To type numbers</label><br>
+
+    <label><input type="radio" name="q32" value="B"> B. To capitalize all letters until turned off</label><br>
+
+    <label><input type="radio" name="q32" value="C"> C. To delete text</label><br>
+
+    <label><input type="radio" name="q32" value="D"> D. To move the cursor</label>
+
+  </div>
+
+
+
+  <div class="question">
+
+    <p>33. Why is it important to save your work frequently?</p>
+
+    <label><input type="radio" name="q33" value="A"> A. To make the computer faster</label><br>
+
+    <label><input type="radio" name="q33" value="B"> B. To prevent loss of data due to power failure or program crash</label><br>
+
+    <label><input type="radio" name="q33" value="C"> C. To share your work with others easily</label><br>
+
+    <label><input type="radio" name="q33" value="D"> D. To reduce the file size</label>
+
+  </div>
+
+
+
+  <div class="question">
+
+    <p>34. Which of these is an example of an output device?</p>
+
+    <label><input type="radio" name="q34" value="A"> A. Scanner</label><br>
+
+    <label><input type="radio" name="q34" value="B"> B. Microphone</label><br>
+
+    <label><input type="radio" name="q34" value="C"> C. Speaker</label><br>
+
+    <label><input type="radio" name="q34" value="D"> D. Mouse</label>
+
+  </div>
+
+
+
+  <div class="question">
+
+    <p>35. What is 'disk cleanup' primarily used for?</p>
+
+    <label><input type="radio" name="q35" value="A"> A. To install new software programs</label><br>
+
+    <label><input type="radio" name="q35" value="B"> B. To delete temporary files and free up disk space</label><br>
+
+    <label><input type="radio" name="q35" value="C"> C. To check for computer viruses</label><br>
+
+    <label><input type="radio" name="q35" value="D"> D. To restart the computer</label>
+
+  </div>
+
+  -->
+
+  <button type="button" onclick="checkAnswers()">Submit</button>
+</form>
+
+<div class="result" id="scoreBox"></div>
+<button onclick="showSavedResults()">📄 View Saved Results</button>
+
+<div id="savedResults"></div>
+
+<script>
+  const correctAnswers = {
+    q1: "C",
+    q2: "B"
+    // Add more here like q3: "A", q4: "D", ...
+  };
+
+  function checkAnswers() {
+    const form = document.forms["quizForm"];
+    const student = document.getElementById("studentName").value.trim();
+
+    if (!student) {
+      alert("Please enter your name.");
+      return;
+    }
+
+    let score = 0;
+    let total = Object.keys(correctAnswers).length;
+    let answers = {};
+
+    for (let key in correctAnswers) {
+      const selected = form[key]?.value;
+      answers[key] = selected || "Not answered";
+
+      if (selected === correctAnswers[key]) {
+        score++;
+      }
+    }
+
+    // Save to localStorage
+    const existingData = JSON.parse(localStorage.getItem("quizResults")) || [];
+    existingData.push({
+      name: student,
+      score: score,
+      total: total,
+      answers: answers,
+      date: new Date().toLocaleString()
+    });
+    localStorage.setItem("quizResults", JSON.stringify(existingData));
+
+    document.getElementById("scoreBox").innerText = `✅ ${student}, you scored ${score} out of ${total}.`;
+  }
+
+  function showSavedResults() {
+    const data = JSON.parse(localStorage.getItem("quizResults")) || [];
+    let out = `<h3>📊 Quiz Records</h3>`;
+    if (data.length === 0) {
+      out += "<p>No records found.</p>";
+    } else {
+      data.forEach((entry, index) => {
+        out += `<div style="margin-bottom:10px;">
+          <strong>${index + 1}. ${entry.name}</strong> (${entry.date})<br>
+          Score: ${entry.score}/${entry.total}<br>
+          Answers: ${JSON.stringify(entry.answers)}
+        </div>`;
+      });
+    }
+    document.getElementById("savedResults").innerHTML = out;
+  }
+</script>
+
+</body>
+</html>
