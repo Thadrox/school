@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Simple CBT Test</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 0 20px;
+      background: #f7f9fc;
+      color: #333;
+    }
+    h1 {
+      text-align: center;
+      color: #007bff;
+    }
+    .question {
+      margin-bottom: 20px;
+      padding: 15px;
+      background: white;
+      border-radius: 5px;
+      box-shadow: 0 0 6px rgba(0,0,0,0.1);
+    }
+    label {
+      display: block;
+      margin: 8px 0;
+      cursor: pointer;
+    }
+    input[type="radio"] {
+      margin-right: 8px;
+    }
+    button {
+      display: block;
+      margin: 20px auto;
+      background: #007bff;
+      color: white;
+      padding: 10px 25px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    #result {
+      margin-top: 25px;
+      padding: 15px;
+      background: #e2f0d9;
+      border: 1px solid #8bc34a;
+      border-radius: 5px;
+      display: none;
+      text-align: center;
+      font-weight: bold;
+      color: #4caf50;
+    }
+  </style>
+</head>
+<body>
+  <h1>Simple CBT Test</h1>
+
+  <label for="studentName">Enter your name:</label>
+  <input type="text" id="studentName" placeholder="Your full name" />
+
+    <form id="cbtForm">
+  <div class="question">
+  <p>1. Which of these is a personal hygiene material?</p>
+  <label><input type="radio" name="q1" value="A"> A. Mop</label><br>
+  <label><input type="radio" name="q1" value="B"> B. Soap</label><br>
+  <label><input type="radio" name="q1" value="C"> C. Knife</label><br>
+  <label><input type="radio" name="q1" value="D"> D. Frying pan</label>
+</div>
+
+<div class="question">
+  <p>2. The best way to remove body odour is to:</p>
+  <label><input type="radio" name="q2" value="A"> A. Drink cold water</label><br>
+  <label><input type="radio" name="q2" value="B"> B. Use powder</label><br>
+  <label><input type="radio" name="q2" value="C"> C. Bathe regularly</label><br>
+  <label><input type="radio" name="q2" value="D"> D. Use perfume</label>
+</div>
+
+<div class="question">
+  <p>3. Puberty is the stage of life when:</p>
+  <label><input type="radio" name="q3" value="A"> A. You become an adult overnight</label><br>
+  <label><input type="radio" name="q3" value="B"> B. Physical changes occur in the body</label><br>
+  <label><input type="radio" name="q3" value="C"> C. You retire</label><br>
+  <label><input type="radio" name="q3" value="D"> D. You stop growing</label>
+</div>
+
+<div class="question">
+  <p>4. Which of these is NOT a function of clothing?</p>
+  <label><input type="radio" name="q4" value="A"> A. Modesty</label><br>
+  <label><input type="radio" name="q4" value="B"> B. Protection</label><br>
+  <label><input type="radio" name="q4" value="C"> C. Decoration</label><br>
+  <label><input type="radio" name="q4" value="D"> D. Cooking</label>
+</div>
+
+<div class="question">
+  <p>5. A simple hand tool for sewing is:</p>
+  <label><input type="radio" name="q5" value="A"> A. Stove</label><br>
+  <label><input type="radio" name="q5" value="B"> B. Needles</label><br>
+  <label><input type="radio" name="q5" value="C"> C. Hammer</label><br>
+  <label><input type="radio" name="q5" value="D"> D. Broom</label>
+</div>
+
+<div class="question">
+  <p>6. Which of the following is a female reproductive organ?</p>
+  <label><input type="radio" name="q6" value="A"> A. Testis</label><br>
+  <label><input type="radio" name="q6" value="B"> B. Penis</label><br>
+  <label><input type="radio" name="q6" value="C"> C. Ovary</label><br>
+  <label><input type="radio" name="q6" value="D"> D. Scrotum</label>
+</div>
+
+<div class="question">
+  <p>7. A good laundry agent is:</p>
+  <label><input type="radio" name="q7" value="A"> A. Charcoal</label><br>
+  <label><input type="radio" name="q7" value="B"> B. Powdered soap</label><br>
+  <label><input type="radio" name="q7" value="C"> C. Salt</label><br>
+  <label><input type="radio" name="q7" value="D"> D. Grease</label>
+</div>
+
+<div class="question">
+  <p>8. A house that allows proper air and light is:</p>
+  <label><input type="radio" name="q8" value="A"> A. Badly ventilated</label><br>
+  <label><input type="radio" name="q8" value="B"> B. Well ventilated</label><br>
+  <label><input type="radio" name="q8" value="C"> C. Closed</label><br>
+  <label><input type="radio" name="q8" value="D"> D. Shabby</label>
+</div>
+
+<div class="question">
+  <p>9. A balanced diet includes:</p>
+  <label><input type="radio" name="q9" value="A"> A. All food in one group</label><br>
+  <label><input type="radio" name="q9" value="B"> B. All classes of food</label><br>
+  <label><input type="radio" name="q9" value="C"> C. Only protein</label><br>
+  <label><input type="radio" name="q9" value="D"> D. Only carbohydrates</label>
+</div>
+
+<div class="question">
+  <p>10. A good homemaker should be:</p>
+  <label><input type="radio" name="q10" value="A"> A. Dirty</label><br>
+  <label><input type="radio" name="q10" value="B"> B. Careless</label><br>
+  <label><input type="radio" name="q10" value="C"> C. Responsible</label><br>
+  <label><input type="radio" name="q10" value="D"> D. Lazy</label>
+</div>
+
+<div class="question">
+  <p>11. Which of these is a reason for body cleanliness?</p>
+  <label><input type="radio" name="q11" value="A"> A. To sleep better</label><br>
+  <label><input type="radio" name="q11" value="B"> B. To feel dirty</label><br>
+  <label><input type="radio" name="q11" value="C"> C. To stay healthy</label><br>
+  <label><input type="radio" name="q11" value="D"> D. To attract mosquitoes</label>
+</div>
+
+<div class="question">
+  <p>12. Which of these is a puberty change in boys?</p>
+  <label><input type="radio" name="q12" value="A"> A. Menstruation</label><br>
+  <label><input type="radio" name="q12" value="B"> B. Beard growth</label><br>
+  <label><input type="radio" name="q12" value="C"> C. Breast enlargement</label><br>
+  <label><input type="radio" name="q12" value="D"> D. Pregnancy</label>
+</div>
+
+<div class="question">
+  <p>13. A type of stitch used for joining fabrics is:</p>
+  <label><input type="radio" name="q13" value="A"> A. Running stitch</label><br>
+  <label><input type="radio" name="q13" value="B"> B. Brush stroke</label><br>
+  <label><input type="radio" name="q13" value="C"> C. Thumb press</label><br>
+  <label><input type="radio" name="q13" value="D"> D. Knit stitch</label>
+</div>
+
+<div class="question">
+  <p>14. Which of these helps to prevent body odour?</p>
+  <label><input type="radio" name="q14" value="A"> A. Applying powder</label><br>
+  <label><input type="radio" name="q14" value="B"> B. Eating oily food</label><br>
+  <label><input type="radio" name="q14" value="C"> C. Taking regular baths</label><br>
+  <label><input type="radio" name="q14" value="D"> D. Using cooking oil</label>
+</div>
+
+<div class="question">
+  <p>15. The place where food is cooked is the:</p>
+  <label><input type="radio" name="q15" value="A"> A. Bedroom</label><br>
+  <label><input type="radio" name="q15" value="B"> B. Sitting room</label><br>
+  <label><input type="radio" name="q15" value="C"> C. Kitchen</label><br>
+  <label><input type="radio" name="q15" value="D"> D. Toilet</label>
+</div>
+
+<div class="question">
+  <p>16. Clothing materials include the following EXCEPT:</p>
+  <label><input type="radio" name="q16" value="A"> A. Cotton</label><br>
+  <label><input type="radio" name="q16" value="B"> B. Silk</label><br>
+  <label><input type="radio" name="q16" value="C"> C. Sugar</label><br>
+  <label><input type="radio" name="q16" value="D"> D. Wool</label>
+</div>
+
+<div class="question">
+  <p>17. A food that helps body growth is:</p>
+  <label><input type="radio" name="q17" value="A"> A. Yam</label><br>
+  <label><input type="radio" name="q17" value="B"> B. Meat</label><br>
+  <label><input type="radio" name="q17" value="C"> C. Oil</label><br>
+  <label><input type="radio" name="q17" value="D"> D. Salt</label>
+</div>
+
+<div class="question">
+  <p>18. One source of protein is:</p>
+  <label><input type="radio" name="q18" value="A"> A. Milk</label><br>
+  <label><input type="radio" name="q18" value="B"> B. Salt</label><br>
+  <label><input type="radio" name="q18" value="C"> C. Sugar</label><br>
+  <label><input type="radio" name="q18" value="D"> D. Palm oil</label>
+</div>
+
+<div class="question">
+  <p>19. Which one is a good food storage practice?</p>
+  <label><input type="radio" name="q19" value="A"> A. Leaving food uncovered</label><br>
+  <label><input type="radio" name="q19" value="B"> B. Storing in airtight containers</label><br>
+  <label><input type="radio" name="q19" value="C"> C. Keeping beside waste bin</label><br>
+  <label><input type="radio" name="q19" value="D"> D. Leaving on the floor</label>
+</div>
+
+<div class="question">
+  <p>20. How many main food nutrients do we have?</p>
+  <label><input type="radio" name="q20" value="A"> A. 10</label><br>
+  <label><input type="radio" name="q20" value="B"> B. 7</label><br>
+  <label><input type="radio" name="q20" value="C"> C. 6</label><br>
+  <label><input type="radio" name="q20" value="D"> D. 5</label>
+</div>
+
+<div class="question">
+  <p>21. Which of these is used for pressing clothes?</p>
+  <label><input type="radio" name="q21" value="A"> A. Hoe</label><br>
+  <label><input type="radio" name="q21" value="B"> B. Iron</label><br>
+  <label><input type="radio" name="q21" value="C"> C. Spade</label><br>
+  <label><input type="radio" name="q21" value="D"> D. Hammer</label>
+</div>
+
+<div class="question">
+  <p>22. Proper waste disposal helps in preventing:</p>
+  <label><input type="radio" name="q22" value="A"> A. Joy</label><br>
+  <label><input type="radio" name="q22" value="B"> B. Disease</label><br>
+  <label><input type="radio" name="q22" value="C"> C. Celebration</label><br>
+  <label><input type="radio" name="q22" value="D"> D. Festivals</label>
+</div>
+
+<div class="question">
+  <p>23. Which of these is an example of kitchen equipment?</p>
+  <label><input type="radio" name="q23" value="A"> A. Black board</label><br>
+  <label><input type="radio" name="q23" value="B"> B. Gas cooker</label><br>
+  <label><input type="radio" name="q23" value="C"> C. Chalk</label><br>
+  <label><input type="radio" name="q23" value="D"> D. Table fan</label>
+</div>
+
+<div class="question">
+  <p>24. Which of the following food items is a carbohydrate?</p>
+  <label><input type="radio" name="q24" value="A"> A. Fish</label><br>
+  <label><input type="radio" name="q24" value="B"> B. Rice</label><br>
+  <label><input type="radio" name="q24" value="C"> C. Egg</label><br>
+  <label><input type="radio" name="q24" value="D"> D. Meat</label>
+</div>
+
+<div class="question">
+  <p>25. Which of these can stain clothes?</p>
+  <label><input type="radio" name="q25" value="A"> A. Water</label><br>
+  <label><input type="radio" name="q25" value="B"> B. Palm oil</label><br>
+  <label><input type="radio" name="q25" value="C"> C. Soap</label><br>
+  <label><input type="radio" name="q25" value="D"> D. Thread</label>
+</div>
+
+<div class="question">
+  <p>26. How often should underwear be washed?</p>
+  <label><input type="radio" name="q26" value="A"> A. Weekly</label><br>
+  <label><input type="radio" name="q26" value="B"> B. Every two weeks</label><br>
+  <label><input type="radio" name="q26" value="C"> C. After every use</label><br>
+  <label><input type="radio" name="q26" value="D"> D. Once a month</label>
+</div>
+
+<div class="question">
+  <p>27. Which of these is a liquid detergent?</p>
+  <label><input type="radio" name="q27" value="A"> A. Soda</label><br>
+  <label><input type="radio" name="q27" value="B"> B. Dettol</label><br>
+  <label><input type="radio" name="q27" value="C"> C. Bleach</label><br>
+  <label><input type="radio" name="q27" value="D"> D. Charcoal</label>
+</div>
+
+<div class="question">
+  <p>28. Which of these is NOT a basic clothing need?</p>
+  <label><input type="radio" name="q28" value="A"> A. Comfort</label><br>
+  <label><input type="radio" name="q28" value="B"> B. Fashion</label><br>
+  <label><input type="radio" name="q28" value="C"> C. Cooking</label><br>
+  <label><input type="radio" name="q28" value="D"> D. Protection</label>
+</div>
+
+<div class="question">
+  <p>29. The following are causes of poor personal hygiene EXCEPT:</p>
+  <label><input type="radio" name="q29" value="A"> A. Lack of water</label><br>
+  <label><input type="radio" name="q29" value="B"> B. Laziness</label><br>
+  <label><input type="radio" name="q29" value="C"> C. Regular bathing</label><br>
+  <label><input type="radio" name="q29" value="D"> D. Dirtiness</label>
+</div>
+
+<div class="question">
+  <p>30. What nutrient gives energy?</p>
+  <label><input type="radio" name="q30" value="A"> A. Protein</label><br>
+  <label><input type="radio" name="q30" value="B"> B. Fats and oils</label><br>
+  <label><input type="radio" name="q30" value="C"> C. Iron</label><br>
+  <label><input type="radio" name="q30" value="D"> D. Vitamins</label>
+</div>
+
+<div class="question">
+  <p>31. Food that helps to build the body is called:</p>
+  <label><input type="radio" name="q31" value="A"> A. Body-building food</label><br>
+  <label><input type="radio" name="q31" value="B"> B. Energy-giving food</label><br>
+  <label><input type="radio" name="q31" value="C"> C. Protective food</label><br>
+  <label><input type="radio" name="q31" value="D"> D. Junk food</label>
+</div>
+
+<div class="question">
+  <p>32. A stitch that is visible on the outside is:</p>
+  <label><input type="radio" name="q32" value="A"> A. Running stitch</label><br>
+  <label><input type="radio" name="q32" value="B"> B. Invisible stitch</label><br>
+  <label><input type="radio" name="q32" value="C"> C. Hidden stitch</label><br>
+  <label><input type="radio" name="q32" value="D"> D. Secret stitch</label>
+</div>
+
+<div class="question">
+  <p>33. What is the proper way to dispose kitchen waste?</p>
+  <label><input type="radio" name="q33" value="A"> A. Throwing it outside</label><br>
+  <label><input type="radio" name="q33" value="B"> B. Keeping it in the sink</label><br>
+  <label><input type="radio" name="q33" value="C"> C. Putting in dustbin</label><br>
+  <label><input type="radio" name="q33" value="D"> D. Leaving it on the table</label>
+</div>
+
+<div class="question">
+  <p>34. Which of the following is used to clean the kitchen?</p>
+  <label><input type="radio" name="q34" value="A"> A. Mop</label><br>
+  <label><input type="radio" name="q34" value="B"> B. Broom</label><br>
+  <label><input type="radio" name="q34" value="C"> C. Sponge</label><br>
+  <label><input type="radio" name="q34" value="D"> D. Hammer</label>
+</div>
+
+<div class="question">
+  <p>35. A sign of puberty in girls is:</p>
+  <label><input type="radio" name="q35" value="A"> A. Beard</label><br>
+  <label><input type="radio" name="q35" value="B"> B. Menstruation</label><br>
+  <label><input type="radio" name="q35" value="C"> C. Voice deepening</label><br>
+  <label><input type="radio" name="q35" value="D"> D. Muscle growth</label>
+</div>
+
+<div class="question">
+  <p>36. What is used to rinse clothes after washing?</p>
+  <label><input type="radio" name="q36" value="A"> A. Soap</label><br>
+  <label><input type="radio" name="q36" value="B"> B. Water</label><br>
+  <label><input type="radio" name="q36" value="C"> C. Oil</label><br>
+  <label><input type="radio" name="q36" value="D"> D. Powder</label>
+</div>
+
+<div class="question">
+  <p>37. One of the benefits of exercise is:</p>
+  <label><input type="radio" name="q37" value="A"> A. Causing stress</label><br>
+  <label><input type="radio" name="q37" value="B"> B. Making one lazy</label><br>
+  <label><input type="radio" name="q37" value="C"> C. Improving health</label><br>
+  <label><input type="radio" name="q37" value="D"> D. Increasing sleep</label>
+</div>
+
+<div class="question">
+  <p>38. A safe way to keep knives in the kitchen is:</p>
+  <label><input type="radio" name="q38" value="A"> A. Under the bed</label><br>
+  <label><input type="radio" name="q38" value="B"> B. In a drawer</label><br>
+  <label><input type="radio" name="q38" value="C"> C. On the floor</label><br>
+  <label><input type="radio" name="q38" value="D"> D. In the bathroom</label>
+</div>
+
+<div class="question">
+  <p>39. Food that helps fight disease is called:</p>
+  <label><input type="radio" name="q39" value="A"> A. Building food</label><br>
+  <label><input type="radio" name="q39" value="B"> B. Protective food</label><br>
+  <label><input type="radio" name="q39" value="C"> C. Carbohydrates</label><br>
+  <label><input type="radio" name="q39" value="D"> D. Fatty food</label>
+</div>
+
+<div class="question">
+  <p>40. Which of these is a healthy practice?</p>
+  <label><input type="radio" name="q40" value="A"> A. Wearing dirty clothes</label><br>
+  <label><input type="radio" name="q40" value="B"> B. Eating without washing hands</label><br>
+  <label><input type="radio" name="q40" value="C"> C. Washing hands before meals</label><br>
+  <label><input type="radio" name="q40" value="D"> D. Sharing toothbrush</label>
+</div>
+
+
+<div class="question">
+  <p>41. When you finish using the toilet, you should:</p>
+  <label><input type="radio" name="q41" value="A"> A. Run out</label><br>
+  <label><input type="radio" name="q41" value="B"> B. Call a friend</label><br>
+  <label><input type="radio" name="q41" value="C"> C. Wash your hands</label><br>
+  <label><input type="radio" name="q41" value="D"> D. Eat food</label>
+</div>
+
+<div class="question">
+  <p>42. Which is NOT a characteristic of a good house?</p>
+  <label><input type="radio" name="q42" value="A"> A. Ventilation</label><br>
+  <label><input type="radio" name="q42" value="B"> B. Leakproof</label><br>
+  <label><input type="radio" name="q42" value="C"> C. Dirty surroundings</label><br>
+  <label><input type="radio" name="q42" value="D"> D. Security</label>
+</div>
+
+<div class="question">
+  <p>43. The process of keeping the body clean is:</p>
+  <label><input type="radio" name="q43" value="A"> A. Cooking</label><br>
+  <label><input type="radio" name="q43" value="B"> B. Sweeping</label><br>
+  <label><input type="radio" name="q43" value="C"> C. Personal hygiene</label><br>
+  <label><input type="radio" name="q43" value="D"> D. Fighting</label>
+</div>
+
+<div class="question">
+  <p>44. How often should food be checked for spoilage?</p>
+  <label><input type="radio" name="q44" value="A"> A. Every month</label><br>
+  <label><input type="radio" name="q44" value="B"> B. When guests come</label><br>
+  <label><input type="radio" name="q44" value="C"> C. Regularly</label><br>
+  <label><input type="radio" name="q44" value="D"> D. Only on Sundays</label>
+</div>
+
+<div class="question">
+  <p>45. Ironing clothes helps to:</p>
+  <label><input type="radio" name="q45" value="A"> A. Tear them</label><br>
+  <label><input type="radio" name="q45" value="B"> B. Shrink them</label><br>
+  <label><input type="radio" name="q45" value="C"> C. Make them neat</label><br>
+  <label><input type="radio" name="q45" value="D"> D. Paint them</label>
+</div>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <div id="result"></div>
+
+  <script>
+    const correctAnswers = {
+  q1: 'B',
+  q2: 'C',
+  q3: 'B',
+  q4: 'D',
+  q5: 'B',
+  q6: 'C',
+  q7: 'B',
+  q8: 'B',
+  q9: 'B',
+  q10: 'C',
+  q11: 'C',
+  q12: 'B',
+  q13: 'A',
+  q14: 'C',
+  q15: 'C',
+  q16: 'C',
+  q17: 'B',
+  q18: 'A',
+  q19: 'B',
+  q20: 'C',
+  q21: 'B',
+  q22: 'B',
+  q23: 'B',
+  q24: 'B',
+  q25: 'B',
+  q26: 'C',
+  q27: 'B',
+  q28: 'C',
+  q29: 'C',
+  q30: 'B',
+  q31: 'A',
+  q32: 'A',
+  q33: 'C',
+  q34: 'C',
+  q35: 'B',
+  q36: 'B',
+  q37: 'C',
+  q38: 'B',
+  q39: 'B',
+  q40: 'C',
+  q41: 'C',
+  q42: 'C',
+  q43: 'C',
+  q44: 'C',
+  q45: 'C'
+
+     };
+
+    const form = document.getElementById('cbtForm');
+    const resultDiv = document.getElementById('result');
+    const studentNameInput = document.getElementById('studentName');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const studentName = studentNameInput.value.trim();
+      if (!studentName) {
+        alert('Please enter your name before submitting.');
+        studentNameInput.focus();
+        return;
+      }
+
+      let score = 0;
+      let total = Object.keys(correctAnswers).length;
+
+      for (const [question, correct] of Object.entries(correctAnswers)) {
+        const selected = form.elements[question].value;
+        if (selected === correct) {
+          score++;
+        }
+      }
+
+      const percentage = ((score / total) * 100).toFixed(2);
+
+      resultDiv.style.display = 'block';
+      resultDiv.textContent = `${studentName}, your score is ${score} out of ${total} (${percentage}%).`;
+
+      // NEW: Send score to parent window
+      if (window.parent) {
+          window.parent.postMessage({
+              type: 'quizScore', // A type to identify the message
+              score: score,
+              totalQuestions: total,
+              studentName: studentName // Optional: Send student name if needed by parent
+          }, 'https://thadrox.github.io'); // IMPORTANT: Replace with your actual GitHub Pages URL
+      }
+
+      // Optionally disable form after submission
+      form.querySelector('button').disabled = true;
+      form.querySelectorAll('input').forEach(input => input.disabled = true);
+      studentNameInput.disabled = true;
+    });
+  </script>
+</body>
+</html>
