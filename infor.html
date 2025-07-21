@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Simple CBT Test</title>
+
+  <style>
+
+    body {
+
+      font-family: Arial, sans-serif;
+
+      max-width: 600px;
+
+      margin: 20px auto;
+
+      padding: 0 20px;
+
+      background: #f7f9fc;
+
+      color: #333;
+
+    }
+
+    h1 {
+
+      text-align: center;
+
+      color: #007bff;
+
+    }
+
+    .question {
+
+      margin-bottom: 20px;
+
+      padding: 15px;
+
+      background: white;
+
+      border-radius: 5px;
+
+      box-shadow: 0 0 6px rgba(0,0,0,0.1);
+
+    }
+
+    label {
+
+      display: block;
+
+      margin: 8px 0;
+
+      cursor: pointer;
+
+    }
+
+    input[type="radio"] {
+
+      margin-right: 8px;
+
+    }
+
+    button {
+
+      display: block;
+
+      margin: 20px auto;
+
+      background: #007bff;
+
+      color: white;
+
+      padding: 10px 25px;
+
+      border: none;
+
+      border-radius: 5px;
+
+      font-size: 16px;
+
+      cursor: pointer;
+
+    }
+
+    #result {
+
+      margin-top: 25px;
+
+      padding: 15px;
+
+      background: #e2f0d9;
+
+      border: 1px solid #8bc34a;
+
+      border-radius: 5px;
+
+      display: none;
+
+      text-align: center;
+
+      font-weight: bold;
+
+      color: #4caf50;
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <h1>Simple CBT Test</h1>
+
+
+
+  <label for="studentName">Enter your name:</label>
+
+  <input type="text" id="studentName" placeholder="Your full name" />
+
+
+
+    <form id="cbtForm">
+
+<div class="question">
+
+  <p>1. What is the primary function of a web browser?</p>
+
+  <label><input type="radio" name="q1" value="A"> To send emails</label>
+
+  <label><input type="radio" name="q1" value="B"> To store files</label>
+
+  <label><input type="radio" name="q1" value="C"> To view web pages</label>
+
+  <label><input type="radio" name="q1" value="D"> To draw images</label>
+
+</div>
+
+
+
+<div class="question">
+
+  <p>2. Which of the following is an example of a web browser?</p>
+
+  <label><input type="radio" name="q2" value="A"> Windows</label>
+
+  <label><input type="radio" name="q2" value="B"> Android</label>
+
+  <label><input type="radio" name="q2" value="C"> Google Chrome</label>
+
+  <label><input type="radio" name="q2" value="D"> WhatsApp</label>
+
+</div>
+
+
+
+<div class="question">
+
+  <p>3. What is the full meaning of URL?</p>
+
+  <label><input type="radio" name="q3" value="A"> Uniform Reference Link</label>
+
+  <label><input type="radio" name="q3" value="B"> Universal Resource Locator</label>
+
+  <label><input type="radio" name="q3" value="C"> Unified Reading Link</label>
+
+  <label><input type="radio" name="q3" value="D"> User Resource Locator</label>
+
+</div>
+
+
+
+<div class="question">
+
+  <p>4. Which device connects computers in a network?</p>
+
+  <label><input type="radio" name="q4" value="A"> Modem</label>
+
+  <label><input type="radio" name="q4" value="B"> Switch</label>
+
+  <label><input type="radio" name="q4" value="C"> Mouse</label>
+
+  <label><input type="radio" name="q4" value="D"> Keyboard</label>
+
+</div>
+
+
+
+<div class="question">
+
+  <p>5. Which of the following is a search engine?</p>
+
+  <label><input type="radio" name="q5" value="A"> Google</label>
+
+  <label><input type="radio" name="q5" value="B"> Windows</label>
+
+  <label><input type="radio" name="q5" value="C"> Gmail</label>
+
+  <label><input type="radio" name="q5" value="D"> Yahoo Mail</label>
+
+</div>
+
+
+
+<div class="question">
+
+  <p>6. What does HTTP stand for?</p>
+
+  <label><input type="radio" name="q6" value="A"> HyperText Transfer Protocol</label>
+
+  <label><input type="radio" name="q6" value="B"> HighText Transfer Protocol</label>
+
+  <label><input type="radio" name="q6" value="C"> Hyper Transfer Text Processing</label>
+
+  <label><input type="radio" name="q6" value="D"> Hyperlink Transfer Protocol</label>
+
+</div>
+
+
+
+<div class="question">
+
+  <p>7. Which one is not a social media platform?</p>
+
+  <label><input type="radio" name="q7" value="A"> Facebook</label>
+
+  <label><input type="radio" name="q7" value="B"> Twitter</label>
+
+  <label><input type="radio" name="q7" value="C"> Excel</label>
+
+  <label><input type="radio" name="q7" value="D"> Instagram</label>
+
+</div>
+
+
+
+<div class="question">
+
+  <p>8. What is the use of antivirus software?</p>
+
+  <label><input type="radio" name="q8" value="A"> To type documents</label>
+
+  <label><input type="radio" name="q8" value="B"> To create viruses</label>
+
+  <label><input type="radio" name="q8" value="C"> To remove viruses</label>
+
+  <label><input type="radio" name="q8" value="D"> To browse the internet</label>
+
+</div>
+
+
+
+<div class="question">
+
+  <p>9. What does ISP stand for?</p>
+
+  <label><input type="radio" name="q9" value="A"> Internet Signal Program</label>
+
+  <label><input type="radio" name="q9" value="B"> Internal System Port</label>
+
+  <label><input type="radio" name="q9" value="C"> Internet Service Provider</label>
+
+  <label><input type="radio" name="q9" value="D"> Inter Server Processor</label>
+
+</div>
+
+
+
+<div class="question">
+
+  <p>10. What does the refresh button on a browser do?</p>
+
+  <label><input type="radio" name="q10" value="A"> Restarts the computer</label>
+
+  <label><input type="radio" name="q10" value="B"> Reloads the current webpage</label>
+
+  <label><input type="radio" name="q10" value="C"> Opens a new tab</label>
+
+  <label><input type="radio" name="q10" value="D"> Saves the page</label>
+
+</div>
+
+<div class=”question”>
+
+  <p>11. Which one is a file extension for web pages?</p>
+
+  <label><input type=”radio” name=”q11” value=”A”> .doc</label>
+
+  <label><input type=”radio” name=”q11” value=”B”> .html</label>
+
+  <label><input type=”radio” name=”q11” value=”C”> .xls</label>
+
+  <label><input type=”radio” name=”q11” value=”D”> .ppt</label>
+
+</div>
+
+
+
+<div class=”question”>
+
+  <p>12. Which of the following is not an input device?</p>
+
+  <label><input type=”radio” name=”q12” value=”A”> Mouse</label>
+
+  <label><input type=”radio” name=”q12” value=”B”> Scanner</label>
+
+  <label><input type=”radio” name=”q12” value=”C”> Speaker</label>
+
+  <label><input type=”radio” name=”q12” value=”D”> Keyboard</label>
+
+</div>
+
+
+
+<div class=”question”>
+
+  <p>13. A computer network within a school is called:</p>
+
+  <label><input type=”radio” name=”q13” value=”A”> WAN</label>
+
+  <label><input type=”radio” name=”q13” value=”B”> MAN</label>
+
+  <label><input type=”radio” name=”q13” value=”C”> LAN</label>
+
+  <label><input type=”radio” name=”q13” value=”D”> PAN</label>
+
+</div>
+
+
+
+<div class=”question”>
+
+  <p>14. Which one stores data permanently?</p>
+
+  <label><input type=”radio” name=”q14” value=”A”> RAM</label>
+
+  <label><input type=”radio” name=”q14” value=”B”> ROM</label>
+
+  <label><input type=”radio” name=”q14” value=”C”> Cache</label>
+
+  <label><input type=”radio” name=”q14” value=”D”> Register</label>
+
+</div>
+
+
+
+<div class=”question”>
+
+  <p>15. Which software is used for presentation?</p>
+
+  <label><input type=”radio” name=”q15” value=”A”> Excel</label>
+
+  <label><input type=”radio” name=”q15” value=”B”> Word</label>
+
+  <label><input type=”radio” name=”q15” value=”C”> PowerPoint</label>
+
+  <label><input type=”radio” name=”q15” value=”D”> Chrome</label>
+
+</div>
+
+
+
+<div class=”question”>
+
+  <p>16. What is phishing?</p>
+
+  <label><input type=”radio” name=”q16” value=”A”> A fishing game</label>
+
+  <label><input type=”radio” name=”q16” value=”B”> Sending fake emails to steal information</label>
+
+  <label><input type=”radio” name=”q16” value=”C”> Programming software</label>
+
+  <label><input type=”radio” name=”q16” value=”D”> Installing apps</label>
+
+</div>
+
+
+
+<div class=”question”>
+
+  <p>17. Which one is used to connect to a wireless network?</p>
+
+  <label><input type=”radio” name=”q17” value=”A”> HDMI</label>
+
+  <label><input type=”radio” name=”q17” value=”B”> VGA</label>
+
+  <label><input type=”radio” name=”q17” value=”C”> Wi-Fi</label>
+
+  <label><input type=”radio” name=”q17” value=”D”> USB</label>
+
+</div>
+
+
+
+<div class=”question”>
+
+  <p>18. A program that copies itself and spreads is called:</p>
+
+  <label><input type=”radio” name=”q18” value=”A”> Spyware</label>
+
+  <label><input type=”radio” name=”q18” value=”B”> Virus</label>
+
+  <label><input type=”radio” name=”q18” value=”C”> Worm</label>
+
+  <label><input type=”radio” name=”q18” value=”D”> Firewall</label>
+
+</div>
+
+
+
+<div class=”question”>
+
+  <p>19. What device is used to print on paper?</p>
+
+  <label><input type=”radio” name=”q19” value=”A”> Plotter</label>
+
+  <label><input type=”radio” name=”q19” value=”B”> Monitor</label>
+
+  <label><input type=”radio” name=”q19” value=”C”> Printer</label>
+
+  <label><input type=”radio” name=”q19” value=”D”> Projector</label>
+
+</div>
+
+
+
+<div class=”question”>
+
+  <p>20. Which is a type of computer virus?</p>
+
+  <label><input type=”radio” name=”q20” value=”A”> Trojan horse</label>
+
+  <label><input type=”radio” name=”q20” value=”B”> Mozilla</label>
+
+  <label><input type=”radio” name=”q20” value=”C”> Chrome</label>
+
+  <label><input type=”radio” name=”q20” value=”D”> Safari</label>
+
+</div>
+
+
+
+<div class=”question”>
+
+  <p>21. Which of the following can protect a computer?</p>
+
+  <label><input type=”radio” name=”q21” value=”A”> Wi-Fi</label>
+
+  <label><input type=”radio” name=”q21” value=”B”> Antivirus</label>
+
+  <label><input type=”radio” name=”q21” value=”C”> Webcam</label>
+
+  <label><input type=”radio” name=”q21” value=”D”> Gamepad</label>
+
+</div>
+
+
+
+<div class=”question”>
+
+  <p>22. Which of the following is an email service?</p>
+
+  <label><input type=”radio” name=”q22” value=”A”> Gmail</label>
+
+  <label><input type=”radio” name=”q22” value=”B”> Facebook</label>
+
+  <label><input type=”radio” name=”q22” value=”C”> Instagram</label>
+
+  <label><input type=”radio” name=”q22” value=”D”> Twitter</label>
+
+</div>
+
+
+
+<div class=”question”>
+
+  <p>23. What is the purpose of a firewall?</p>
+
+  <label><input type=”radio” name=”q23” value=”A”> To cool the system</label>
+
+  <label><input type=”radio” name=”q23” value=”B”> To prevent viruses</label>
+
+  <label><input type=”radio” name=”q23” value=”C”> To block unauthorized access</label>
+
+  <label><input type=”radio” name=”q23” value=”D”> To boost speed</label>
+
+</div>
+
+
+
+<div class=”question”>
+
+  <p>24. Which application is best for typing letters?</p>
+
+  <label><input type=”radio” name=”q24” value=”A”> Excel</label>
+
+  <label><input type=”radio” name=”q24” value=”B”> Word</label>
+
+  <label><input type=”radio” name=”q24” value=”C”> PowerPoint</label>
+
+  <label><input type=”radio” name=”q24” value=”D”> Paint</label>
+
+</div>
+
+
+
+<div class=”question”>
+
+  <p>25. What is used to store and carry data easily?</p>
+
+  <label><input type=”radio” name=”q25” value=”A”> RAM</label>
+
+  <label><input type=”radio” name=”q25” value=”B”> CPU</label>
+
+  <label><input type=”radio” name=”q25” value=”C”> Flash drive</label>
+
+  <label><input type=”radio” name=”q25” value=”D”> Monitor</label>
+
+</div>
+
+
+
+<div class=”question”>
+
+  <p>26. Which tool is best for creating spreadsheets?</p>
+
+  <label><input type=”radio” name=”q26” value=”A”> Word</label>
+
+  <label><input type=”radio” name=”q26” value=”B”> Excel</label>
+
+  <label><input type=”radio” name=”q26” value=”C”> Paint</label>
+
+  <label><input type=”radio” name=”q26” value=”D”> Notepad</label>
+
+</div>
+
+
+
+<div class=”question”>
+
+  <p>27. What is cyberbullying?</p>
+
+  <label><input type=”radio” name=”q27” value=”A”> Sending large files</label>
+
+  <label><input type=”radio” name=”q27” value=”B”> Posting false and harmful info online</label>
+
+  <label><input type=”radio” name=”q27” value=”C”> Playing online games</label>
+
+  <label><input type=”radio” name=”q27” value=”D”> Programming on the web</label>
+
+</div>
+
+
+
+<div class=”question”>
+
+  <p>28. What is an online classroom called?</p>
+
+  <label><input type=”radio” name=”q28” value=”A”> e-Learning</label>
+
+  <label><input type=”radio” name=”q28” value=”B”> Chatroom</label>
+
+  <label><input type=”radio” name=”q28” value=”C”> Email</label>
+
+  <label><input type=”radio” name=”q28” value=”D”> Virtual bank</label>
+
+</div>
+
+
+
+<div class=”question”>
+
+  <p>29. Which of the following is a mobile operating system?</p>
+
+  <label><input type=”radio” name=”q29” value=”A”> Linux</label>
+
+  <label><input type=”radio” name=”q29” value=”B”> Windows</label>
+
+  <label><input type=”radio” name=”q29” value=”C”> Android</label>
+
+  <label><input type=”radio” name=”q29” value=”D”> macOS</label>
+
+</div>
+
+
+
+<div class=”question”>
+
+  <p>30. Which of these is a benefit of ICT in education?</p>
+
+  <label><input type=”radio” name=”q30” value=”A”> Better exams</label>
+
+  <label><input type=”radio” name=”q30” value=”B”> Easier learning</label>
+
+  <label><input type=”radio” name=”q30” value=”C”> More textbooks</label>
+
+  <label><input type=”radio” name=”q30” value=”D”> Less internet</label>
+
+</div>
+
+
+
+<div class=”question”>
+
+  <p>31. What is a spreadsheet used for?</p>
+
+  <label><input type=”radio” name=”q31” value=”A”> Drawing</label>
+
+  <label><input type=”radio” name=”q31” value=”B”> Calculations</label>
+
+  <label><input type=”radio” name=”q31” value=”C”> Typing essays</label>
+
+  <label><input type=”radio” name=”q31” value=”D”> Watching videos</label>
+
+</div>
+
+
+
+<div class=”question”>
+
+  <p>32. Which of these helps store website addresses?</p>
+
+  <label><input type=”radio” name=”q32” value=”A”> Memory card</label>
+
+  <label><input type=”radio” name=”q32” value=”B”> URL bar</label>
+
+  <label><input type=”radio” name=”q32” value=”C”> IP address</label>
+
+  <label><input type=”radio” name=”q32” value=”D”> Bookmarks</label>
+
+</div>
+
+
+
+<div class=”question”>
+
+  <p>33. What is an icon?</p>
+
+  <label><input type=”radio” name=”q33” value=”A”> A virus</label>
+
+  <label><input type=”radio” name=”q33” value=”B”> A small picture representing a file or program</label>
+
+  <label><input type=”radio” name=”q33” value=”C”> A website</label>
+
+  <label><input type=”radio” name=”q33” value=”D”> A game</label>
+
+</div>
+
+
+
+<div class=”question”>
+
+  <p>34. Which of the following is used to capture images?</p>
+
+  <label><input type=”radio” name=”q34” value=”A”> Webcam</label>
+
+  <label><input type=”radio” name=”q34” value=”B”> Speaker</label>
+
+  <label><input type=”radio” name=”q34” value=”C”> Projector</label>
+
+  <label><input type=”radio” name=”q34” value=”D”> CPU</label>
+
+</div>
+
+
+
+<div class=”question”>
+
+  <p>35. Which of these is a type of internet connection?</p>
+
+  <label><input type=”radio” name=”q35” value=”A”> Solar</label>
+
+  <label><input type=”radio” name=”q35” value=”B”> LAN</label>
+
+  <label><input type=”radio” name=”q35” value=”C”> Cable</label>
+
+  <label><input type=”radio” name=”q35” value=”D”> Scanner</label>
+
+</div>
+
+
+
+  <button type="submit">Submit</button>
+
+  </form>
+
+
+
+  <div id="result"></div>
+
+
+
+  <script>
+
+    const correctAnswers = {
+
+  q1: "C",
+
+  q2: "C",
+
+  q3: "B",
+
+  q4: "B",
+
+  q5: "C",
+
+  q6: "C",
+
+  q7: "C",
+
+  q8: "B",
+
+  q9: "B",
+
+  q10: "B",
+
+  q11: "D",
+
+  q12: "C",
+
+  q13: "A",
+
+  q14: "C",
+
+  q15: "A",
+
+  q16: "C",
+
+  q17: "D",
+
+  q18: "B",
+
+  q19: "A",
+
+  q20: "C",
+
+  q21: "B",
+
+  q22: "D",
+
+  q23: "A",
+
+  q24: "C",
+
+  q25: "D",
+
+  q26: "B",
+
+  q27: "A",
+
+  q28: "C",
+
+  q29: "D",
+
+  q30: "C",
+
+  q31: "B",
+
+  q32: "C",
+
+  q33: "D",
+
+  q34: "A",
+
+  q35: "B"
+
+};
+
+ 
+
+
+
+     
+
+
+
+    const form = document.getElementById('cbtForm');
+
+    const resultDiv = document.getElementById('result');
+
+    const studentNameInput = document.getElementById('studentName');
+
+
+
+    form.addEventListener('submit', function(e) {
+
+      e.preventDefault();
+
+
+
+      const studentName = studentNameInput.value.trim();
+
+      if (!studentName) {
+
+        alert('Please enter your name before submitting.');
+
+        studentNameInput.focus();
+
+        return;
+
+      }
+
+
+
+      let score = 0;
+
+      let total = Object.keys(correctAnswers).length;
+
+
+
+      for (const [question, correct] of Object.entries(correctAnswers)) {
+
+        const selected = form.elements[question].value;
+
+        if (selected === correct) {
+
+          score++;
+
+        }
+
+      }
+
+
+
+      const percentage = ((score / total) * 100).toFixed(2);
+
+
+
+      resultDiv.style.display = 'block';
+
+      resultDiv.textContent = `${studentName}, your score is ${score} out of ${total} (${percentage}%).`;
+
+
+
+      // Optionally disable form after submission
+
+      form.querySelector('button').disabled = true;
+
+      form.querySelectorAll('input').forEach(input => input.disabled = true);
+
+      studentNameInput.disabled = true;
+
+    });
+
+  </script>
+
+</body>
+
+</html>
+
