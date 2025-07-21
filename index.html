@@ -31,25 +31,26 @@
       padding: 20px;
       color: var(--text-dark);
       display: flex;
-      justify-content: center;
-      align-items: flex-start; /* Align to the top, not center vertically */
+      flex-direction: column; /* Changed to column to stack containers */
+      justify-content: flex-start; /* Align to the top */
+      align-items: center; /* Center horizontally */
       min-height: 100vh;
     }
     .container {
       max-width: 700px;
       width: 100%;
-      margin: 20px auto; /* Adjust margin for overall vertical spacing */
+      margin: 20px auto;
       background: var(--background-card);
       padding: 30px;
       border-radius: 12px;
       box-shadow: 0 8px 25px var(--shadow-light);
       text-align: center;
-      box-sizing: border-box; /* Include padding in width */
+      box-sizing: border-box;
     }
     img.logo {
       max-width: 150px;
       margin-bottom: 25px;
-      border-radius: 8px; /* Slightly rounded logo */
+      border-radius: 8px;
     }
     h1 {
       font-size: 2.2em;
@@ -71,7 +72,7 @@
       font-weight: 500;
     }
     input[type="text"], select {
-      width: calc(100% - 24px); /* Account for padding */
+      width: calc(100% - 24px);
       padding: 12px;
       margin: 10px 0 20px;
       border: 1px solid var(--border-light);
@@ -120,7 +121,7 @@
     button#submitEarlyBtn:hover {
       background-color: #218838;
     }
-    button#goBackBtn, button.secondary-btn { /* For Download/Clear buttons */
+    button#goBackBtn, button.secondary-btn {
       background-color: var(--secondary-color);
     }
     button#goBackBtn:hover, button.secondary-btn:hover {
@@ -129,7 +130,7 @@
 
     iframe {
       width: 100%;
-      height: 600px; /* Reduced height to fit more content on screen */
+      height: 600px;
       border: 1px solid var(--border-light);
       border-radius: 8px;
       margin-top: 25px;
@@ -144,16 +145,16 @@
       padding: 8px 15px;
       background: var(--background-light);
       border-radius: 5px;
-      display: inline-block; /* To make padding effective */
+      display: inline-block;
       min-width: 150px;
     }
     #timer.warning {
       color: var(--warning-color);
-      background: #fff3cd; /* Light yellow background */
+      background: #fff3cd;
     }
     #timer.timeup {
       color: var(--danger-color);
-      background: #f8d7da; /* Light red background */
+      background: #f8d7da;
     }
     label {
       font-weight: 600;
@@ -186,8 +187,8 @@
       border-radius: 8px;
       border: 1px solid var(--border-light);
       text-align: left;
-      max-height: 250px; /* Limit height for scroll */
-      overflow-y: auto; /* Add scroll if content overflows */
+      max-height: 250px;
+      overflow-y: auto;
     }
     #savedResults ul {
       list-style: none;
@@ -207,6 +208,26 @@
       color: var(--text-dark);
     }
 
+    /* Message for actions */
+    #actionMessage {
+        display: none; /* Hidden by default */
+        text-align: center;
+        padding: 10px;
+        margin: 15px auto;
+        border-radius: 5px;
+        font-weight: 500;
+        max-width: 600px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    #actionMessage.success {
+        background-color: var(--success-color);
+        color: white;
+    }
+    #actionMessage.error {
+        background-color: var(--danger-color);
+        color: white;
+    }
+
     /* Responsive adjustments */
     @media (max-width: 768px) {
       body {
@@ -224,7 +245,7 @@
         padding: 10px;
       }
       button {
-        max-width: none; /* Buttons take full width on small screens */
+        max-width: none;
       }
     }
   </style>
@@ -289,6 +310,20 @@
   <button onclick="restartQuiz()">Restart Quiz for Next Student</button>
 </div>
 
+<div id="actionMessage" class="container" style="display: none; margin-top:15px; margin-bottom: 0;"></div>
+
+<div class="container" style="margin-top:25px;">
+  <h2>📘 Saved Quiz Records</h2>
+  <div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-bottom: 20px;">
+    <button onclick="showSavedResults()" class="secondary-btn" style="flex: 1 1 200px; max-width: 200px;">📊 View All Results</button>
+    <button onclick="downloadResults()" class="secondary-btn" style="flex: 1 1 200px; max-width: 200px;">📥 Download Results</button>
+    <button onclick="clearResults()" class="secondary-btn" style="flex: 1 1 200px; max-width: 200px;">🗑️ Clear Results</button>
+  </div>
+  <div id="savedResults">
+    <p style='text-align: center; color: var(--text-light);'>Click 'View All Results' to see records.</p>
+  </div>
+</div>
+
 <script>
 const allowedNames = [
   "Precious Duke", "Chinedu Okafor", "Adaobi Nwosu", "Ngozi Chukwu", "Samuel Eze",
@@ -304,7 +339,7 @@ const quizLinks = {
   
   // JSS 1 SECOND TERM CBT EXAMS
   'jss1_agric_second': 'https://your-link-here.com/jss1/agric_second.html',
-  'jss1_homeecons_second': 'https://thadrox.github.io/dukecbt/agricthirdtermquiz.html',
+  'jss1_homeecons_second': 'https://your-link-here.com/jss1/homeecons_second.html',
   'jss1_computer_second': 'https://your-link-here.com/jss1/computer_second.html',
   
   // Jss 1 THIRD TERM CBT EXAMS
@@ -370,12 +405,26 @@ const messageArea = document.getElementById("messageArea");
 const goBackBtn = document.getElementById("goBackBtn");
 
 const savedResultsDiv = document.getElementById("savedResults");
+const actionMessageDiv = document.getElementById('actionMessage'); // New message div
+
+// --- Helper for temporary messages ---
+function showActionMessage(message, type = 'success', duration = 3000) {
+    actionMessageDiv.textContent = message;
+    actionMessageDiv.className = 'container'; // Reset classes
+    actionMessageDiv.classList.add(type);
+    actionMessageDiv.style.display = 'block';
+    setTimeout(() => {
+        actionMessageDiv.style.display = 'none';
+    }, duration);
+}
 
 // --- Page Navigation Functions ---
 function showPage(pageId) {
   const pages = [landingPage, namePage, selectionPage, quizPage, timesUpPage];
   pages.forEach(page => page.style.display = 'none');
   document.getElementById(pageId).style.display = 'block';
+  // Hide any lingering action messages when changing main pages
+  actionMessageDiv.style.display = 'none';
 }
 
 // --- Timer Functions ---
@@ -418,12 +467,12 @@ document.getElementById("landingStartBtn").addEventListener("click", () => {
 document.getElementById("nameNextBtn").addEventListener("click", () => {
   const nameInput = studentNameInput.value.trim();
   if (!nameInput) {
-    alert("Please enter your full name to proceed.");
+    showActionMessage("Please enter your full name to proceed.", 'error');
     return;
   }
   const allowedLower = allowedNames.map(n => n.toLowerCase());
   if (!allowedLower.includes(nameInput.toLowerCase())) {
-    alert("Access Denied! Your name is not on the approved student list.");
+    showActionMessage("Access Denied! Your name is not on the approved student list.", 'error', 5000);
     return;
   }
   currentStudentName = nameInput;
@@ -437,7 +486,7 @@ document.getElementById("startQuizBtn").addEventListener("click", () => {
   selectedTerm = termSelect.value.toLowerCase();
 
   if (!selectedClass || !selectedSubject || !selectedTerm) {
-    alert("Please select class, subject, and term.");
+    showActionMessage("Please select class, subject, and term.", 'error');
     return;
   }
 
@@ -496,10 +545,11 @@ function toTitleCase(str) {
 }
 
 function calculateTimeTaken() {
-  if (quizStartTimeStamp === 0) return "N/A"; // Quiz never started
+  if (quizStartTimeStamp === 0) return "N/A"; // Quiz never started or was reloaded
   const timeElapsedMillis = Date.now() - quizStartTimeStamp;
-  const minutes = Math.floor(timeElapsedMillis / (1000 * 60));
-  const seconds = Math.floor((timeElapsedMillis % (1000 * 60)) / 1000);
+  const totalSeconds = Math.floor(timeElapsedMillis / 1000);
+  const minutes = Math.floor(totalSeconds / 60);
+  const seconds = totalSeconds % 60;
   return `${minutes} mins ${seconds} secs`;
 }
 
@@ -511,14 +561,24 @@ function saveResult() {
     term: toTitleCase(selectedTerm),
     timeTaken: calculateTimeTaken(),
     timestamp: new Date().toLocaleString() // When the result was saved
+    // Note: Score from iframe cannot be directly captured here due to security.
+    // If you need score, the iframe quiz page must send it via postMessage to this parent.
   };
 
-  const results = JSON.parse(localStorage.getItem("quizResults") || "[]");
-  results.push(result);
-  localStorage.setItem("quizResults", JSON.stringify(results));
-  alert(`Quiz submission recorded for ${currentStudentName}.`);
-  // Note: Actual score from the iframe quiz would need complex cross-origin communication.
-  // This currently only saves metadata.
+  if (!result.name || !result.class || !result.subject || !result.term) {
+      showActionMessage("Cannot save result: Missing student details or selections. Please ensure you entered your name and made all selections before starting.", 'error', 6000);
+      return;
+  }
+
+  try {
+      const results = JSON.parse(localStorage.getItem("quizResults") || "[]");
+      results.push(result);
+      localStorage.setItem("quizResults", JSON.stringify(results));
+      showActionMessage(`Result saved for ${result.name}.`, 'success');
+  } catch (e) {
+      console.error("Error saving result to localStorage:", e);
+      showActionMessage("Error saving result. Local storage might be full or corrupted.", 'error', 5000);
+  }
 }
 
 function showSavedResults() {
@@ -526,6 +586,7 @@ function showSavedResults() {
 
   if (results.length === 0) {
     savedResultsDiv.innerHTML = "<p style='text-align: center; color: var(--text-light);'>No quiz results found yet.</p>";
+    showActionMessage("No quiz results to display.", 'error');
     return;
   }
 
@@ -537,12 +598,13 @@ function showSavedResults() {
   });
   html += "</ul>";
   savedResultsDiv.innerHTML = html;
+  showActionMessage("Results loaded successfully.", 'success');
 }
 
 function downloadResults() {
   const results = JSON.parse(localStorage.getItem("quizResults") || "[]");
   if (results.length === 0) {
-    alert("No results to download.");
+    showActionMessage("No results to download.", 'error');
     return;
   }
 
@@ -550,34 +612,45 @@ function downloadResults() {
   const headers = "S/N,Name,Class,Subject,Term,Time Taken,Timestamp\n";
   const csvRows = results.map((res, i) => {
     // Ensure values are quoted to handle commas within fields
-    const name = `"${res.name.replace(/"/g, '""')}"`;
-    const cls = `"${res.class.replace(/"/g, '""')}"`;
-    const subject = `"${res.subject.replace(/"/g, '""')}"`;
-    const term = `"${res.term.replace(/"/g, '""')}"`;
-    const timeTaken = `"${res.timeTaken.replace(/"/g, '""')}"`;
-    const timestamp = `"${res.timestamp.replace(/"/g, '""')}"`;
+    const name = `"${res.name ? res.name.replace(/"/g, '""') : ''}"`;
+    const cls = `"${res.class ? res.class.replace(/"/g, '""') : ''}"`;
+    const subject = `"${res.subject ? res.subject.replace(/"/g, '""') : ''}"`;
+    const term = `"${res.term ? res.term.replace(/"/g, '""') : ''}"`;
+    const timeTaken = `"${res.timeTaken ? res.timeTaken.replace(/"/g, '""') : ''}"`;
+    const timestamp = `"${res.timestamp ? res.timestamp.replace(/"/g, '""') : ''}"`;
     return `${i + 1},${name},${cls},${subject},${term},${timeTaken},${timestamp}`;
   });
 
   const csvContent = headers + csvRows.join("\n");
 
-  const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
-  const url = URL.createObjectURL(blob);
-  const link = document.createElement("a");
+  try {
+      const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
 
-  link.href = url;
-  link.download = "duke_cbt_results.csv";
-  document.body.appendChild(link); // Append to body to ensure it's in DOM
-  link.click(); // Programmatically click the link
-  document.body.removeChild(link); // Clean up
-  URL.revokeObjectURL(url); // Free up memory
+      link.href = url;
+      link.download = "duke_cbt_results.csv";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      URL.revokeObjectURL(url);
+      showActionMessage("Results downloaded successfully!", 'success');
+  } catch (e) {
+      console.error("Error downloading results:", e);
+      showActionMessage("Error downloading results. Please try again.", 'error', 5000);
+  }
 }
 
 function clearResults() {
   if (confirm("Are you sure you want to clear ALL saved quiz results? This action cannot be undone.")) {
-    localStorage.removeItem("quizResults");
-    savedResultsDiv.innerHTML = "<p style='text-align: center; color: var(--text-light);'>No quiz results found yet.</p>";
-    alert("All results cleared successfully.");
+    try {
+        localStorage.removeItem("quizResults");
+        savedResultsDiv.innerHTML = "<p style='text-align: center; color: var(--text-light);'>No quiz results found yet.</p>";
+        showActionMessage("All results cleared successfully.", 'success');
+    } catch (e) {
+        console.error("Error clearing results from localStorage:", e);
+        showActionMessage("Error clearing results. Please try again.", 'error', 5000);
+    }
   }
 }
 
@@ -586,18 +659,6 @@ document.addEventListener('DOMContentLoaded', () => {
   showPage("landingPage"); // Default start page
 });
 </script>
-
-<div class="container" style="margin-top:40px;">
-  <h2>📘 Saved Quiz Records</h2>
-  <div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-bottom: 20px;">
-    <button onclick="showSavedResults()" class="secondary-btn" style="flex: 1 1 200px; max-width: 200px;">📊 View All Results</button>
-    <button onclick="downloadResults()" class="secondary-btn" style="flex: 1 1 200px; max-width: 200px;">📥 Download Results</button>
-    <button onclick="clearResults()" class="secondary-btn" style="flex: 1 1 200px; max-width: 200px;">🗑️ Clear Results</button>
-  </div>
-  <div id="savedResults">
-    <p style='text-align: center; color: var(--text-light);'>Click 'View All Results' to see records.</p>
-  </div>
-</div>
 
 </body>
 </html>
